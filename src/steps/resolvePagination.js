@@ -120,10 +120,10 @@ const splitNodes = (height, contentArea, nodes) => {
       // All children are moved to the next page, it doesn't make sense to show the parent on the current page
       // This was causing an infinite loop parent will now be discarded when it has no content
       if (child.children.length > 0 && currentChild.children.length === 0) {
-        if (currentChildren.length === 0) {
-          currentChildren.push(child, ...futureFixedNodes);
-          nextChildren.push(...futureNodes);
-        } else {
+        // if (currentChildren.length === 0) {
+        //   currentChildren.push(child, ...futureFixedNodes);
+        //   nextChildren.push(...futureNodes);
+        // } else {
           const box = Object.assign({}, child.box, {
             top: child.box.top - height,
           });
@@ -131,7 +131,7 @@ const splitNodes = (height, contentArea, nodes) => {
 
           currentChildren.push(...futureFixedNodes);
           nextChildren.push(next, ...futureNodes);
-        }
+        // }
         break;
       }
 
