@@ -14,7 +14,7 @@ export const canCauseBlankSpace = (node, prevNode, currentChildren) => {
   }
 
   // gap between content case
-  if (node.box.height > 791 && childrenIsEmpty === true) {
+  if (node.box.height > 760 && childrenIsEmpty === true) {
     return true;
   }
 
